@@ -1,18 +1,19 @@
 //
-//  ViewController.swift
+//  BaseViewController.swift
 //  MyMusicPlayer
 //
-//  Created by 葛鹏 on 2017/12/2.
+//  Created by Ger on 2017/12/4.
 //  Copyright © 2017年 GpfYxh.Ger.com. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +21,4 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
-
