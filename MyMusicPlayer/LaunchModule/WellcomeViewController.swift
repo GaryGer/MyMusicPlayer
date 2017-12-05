@@ -10,10 +10,14 @@ import UIKit
 
 class WellcomeViewController: UIViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         let btn = UIButton(type: .custom)
         btn.frame = CGRect(x: 20, y: 50, width: 50, height: 50)
         btn.backgroundColor = UIColor.red

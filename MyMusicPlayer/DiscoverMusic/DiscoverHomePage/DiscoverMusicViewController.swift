@@ -21,21 +21,26 @@ protocol DiscoverMusicViewControllerViewOutput {
 }
 
 
-class DiscoverMusicViewControllerViewController: BaseViewController , DiscoverMusicViewControllerViewInput {
+class DiscoverMusicViewController: BaseViewController , DiscoverMusicViewControllerViewInput {
     
     var viewOutput : DiscoverMusicViewControllerViewOutput?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationTitle = "发现音乐"
     }
+}
+
+extension DiscoverMusicViewController{
     
 }
 
 
-extension DiscoverMusicViewControllerViewController{
-    
-    //在这里扩展这个viewCtroller的逻辑
 
-}
+
+
+
+
+
 
 

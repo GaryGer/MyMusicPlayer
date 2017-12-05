@@ -11,10 +11,10 @@ import UIKit
 class BaseTabBarViewController: UITabBarController {
 
     var titles = ["发现音乐","我的音乐","动态","账户"]
-    var normalIcon :[String] = []
-    var selectedIcon :[String] = []
+    var normalIcon :[String] = ["discMusicNormal","myMusicNormal","dynamicNormal","accountNormal"]
+    var selectedIcon :[String] = ["discMusicSelect","myMusicSelect","dynamicSelect","accountSelect"]
     
-    var VCList = [DiscoverMusicViewControllerViewController(),MyMusicViewController(),DynamicViewController(),AccountViewController()]
+    var VCList = [DiscoverMusicViewController(),MyMusicViewController(),DynamicViewController(),AccountViewController()]
     var NavVCList :[BaseNavigationController] = []
     
     override func viewDidLoad() {
@@ -38,6 +38,10 @@ class BaseTabBarViewController: UITabBarController {
         for i in 0..<titles.count {
             let item = self.tabBar.items?[i]
             item?.title = titles[i]
+            item?.image = UIImage(named: normalIcon[i])?.withRenderingMode(.alwaysOriginal)
+            item?.selectedImage = UIImage(named: selectedIcon[i])?.withRenderingMode(.alwaysOriginal)
+            item?.setTitleTextAttributes([NSForegroundColorAttributeName :ColorConversion(hexString: "000000", alpha: 0.8),NSFontAttributeName:UIFont.systemFont(ofSize: 10)], for: .normal)
+            item?.setTitleTextAttributes([NSForegroundColorAttributeName :ColorConversion(hexString: "405783", alpha: 1.0),NSFontAttributeName:UIFont.systemFont(ofSize: 10)], for: .selected)
         }
     }
 

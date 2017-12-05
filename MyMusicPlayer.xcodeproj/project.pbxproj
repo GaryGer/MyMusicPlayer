@@ -14,6 +14,7 @@
 		64B6C0221FD2F9A200DE1AC0 /* MyMusicPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B6C0211FD2F9A200DE1AC0 /* MyMusicPlayerTests.swift */; };
 		64B6C02D1FD2F9A200DE1AC0 /* MyMusicPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B6C02C1FD2F9A200DE1AC0 /* MyMusicPlayerUITests.swift */; };
 		9B3A7226B526F7D9FD6FDDDA /* Pods_MyMusicPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206417D253FC18EC763C5712 /* Pods_MyMusicPlayer.framework */; };
+		C23660671FD6465B00A16FE7 /* UIColor_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23660661FD6465B00A16FE7 /* UIColor_Extension.swift */; };
 		C29649741FD546EA0020EFBB /* DiscoverMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649731FD546EA0020EFBB /* DiscoverMusicViewController.swift */; };
 		C296497A1FD54A540020EFBB /* MyMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649791FD54A540020EFBB /* MyMusicViewController.swift */; };
 		C296497C1FD54A650020EFBB /* DynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C296497B1FD54A650020EFBB /* DynamicViewController.swift */; };
@@ -62,6 +63,7 @@
 		B440472F06253B153BB485AE /* Pods-MyMusicPlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusicPlayerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMusicPlayerTests/Pods-MyMusicPlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B93A8D58262BB938AFAD3373 /* Pods_MyMusicPlayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMusicPlayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCCF9326DF984525D50D10C /* Pods_MyMusicPlayerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMusicPlayerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C23660661FD6465B00A16FE7 /* UIColor_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Extension.swift; sourceTree = "<group>"; };
 		C29649731FD546EA0020EFBB /* DiscoverMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverMusicViewController.swift; sourceTree = "<group>"; };
 		C29649791FD54A540020EFBB /* MyMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicViewController.swift; sourceTree = "<group>"; };
 		C296497B1FD54A650020EFBB /* DynamicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		64B6C00B1FD2F9A200DE1AC0 /* MyMusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				C23660651FD6462000A16FE7 /* Utills */,
 				C2EB0A3D1FD521F9009BD2CE /* Base */,
 				C2EB0A491FD5305E009BD2CE /* LaunchModule */,
 				C2EB0A451FD52FAE009BD2CE /* DiscoverMusic */,
@@ -169,6 +172,14 @@
 				F10DA9B1090B2953C21345CD /* Pods-MyMusicPlayerUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C23660651FD6462000A16FE7 /* Utills */ = {
+			isa = PBXGroup;
+			children = (
+				C23660661FD6465B00A16FE7 /* UIColor_Extension.swift */,
+			);
+			path = Utills;
 			sourceTree = "<group>";
 		};
 		C296495F1FD532B80020EFBB /* Base_Extension */ = {
@@ -604,6 +615,7 @@
 				C296497C1FD54A650020EFBB /* DynamicViewController.swift in Sources */,
 				C29649741FD546EA0020EFBB /* DiscoverMusicViewController.swift in Sources */,
 				C2EB0A431FD521F9009BD2CE /* BaseTabBarViewController.swift in Sources */,
+				C23660671FD6465B00A16FE7 /* UIColor_Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
