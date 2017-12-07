@@ -14,7 +14,7 @@
 		64B6C0221FD2F9A200DE1AC0 /* MyMusicPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B6C0211FD2F9A200DE1AC0 /* MyMusicPlayerTests.swift */; };
 		64B6C02D1FD2F9A200DE1AC0 /* MyMusicPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B6C02C1FD2F9A200DE1AC0 /* MyMusicPlayerUITests.swift */; };
 		9B3A7226B526F7D9FD6FDDDA /* Pods_MyMusicPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206417D253FC18EC763C5712 /* Pods_MyMusicPlayer.framework */; };
-		C20418231FD7D86E00222F12 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20418221FD7D86E00222F12 /* SegmentView.swift */; };
+		C20418231FD7D86E00222F12 /* SegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20418221FD7D86E00222F12 /* SegmentControl.swift */; };
 		C23660671FD6465B00A16FE7 /* UIColor_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23660661FD6465B00A16FE7 /* UIColor_Extension.swift */; };
 		C29649741FD546EA0020EFBB /* DiscoverMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649731FD546EA0020EFBB /* DiscoverMusicViewController.swift */; };
 		C296497A1FD54A540020EFBB /* MyMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649791FD54A540020EFBB /* MyMusicViewController.swift */; };
@@ -24,6 +24,7 @@
 		C2EB0A431FD521F9009BD2CE /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB0A401FD521F9009BD2CE /* BaseTabBarViewController.swift */; };
 		C2EB0A441FD521F9009BD2CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB0A411FD521F9009BD2CE /* BaseViewController.swift */; };
 		C2EB0A4B1FD5308F009BD2CE /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB0A4A1FD5308F009BD2CE /* WellcomeViewController.swift */; };
+		C2F36E451FD93E7100B434F3 /* CustomAnimationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F36E441FD93E7100B434F3 /* CustomAnimationLabel.swift */; };
 		D312908C97CB5D7E3A8C08D3 /* Pods_MyMusicPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93A8D58262BB938AFAD3373 /* Pods_MyMusicPlayerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +65,7 @@
 		B440472F06253B153BB485AE /* Pods-MyMusicPlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusicPlayerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMusicPlayerTests/Pods-MyMusicPlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B93A8D58262BB938AFAD3373 /* Pods_MyMusicPlayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMusicPlayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCCF9326DF984525D50D10C /* Pods_MyMusicPlayerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMusicPlayerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C20418221FD7D86E00222F12 /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
+		C20418221FD7D86E00222F12 /* SegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControl.swift; sourceTree = "<group>"; };
 		C23660661FD6465B00A16FE7 /* UIColor_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Extension.swift; sourceTree = "<group>"; };
 		C29649731FD546EA0020EFBB /* DiscoverMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverMusicViewController.swift; sourceTree = "<group>"; };
 		C29649791FD54A540020EFBB /* MyMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		C2EB0A401FD521F9009BD2CE /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		C2EB0A411FD521F9009BD2CE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C2EB0A4A1FD5308F009BD2CE /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
+		C2F36E441FD93E7100B434F3 /* CustomAnimationLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimationLabel.swift; sourceTree = "<group>"; };
 		F10DA9B1090B2953C21345CD /* Pods-MyMusicPlayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusicPlayerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMusicPlayerUITests/Pods-MyMusicPlayerUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,7 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				C23660661FD6465B00A16FE7 /* UIColor_Extension.swift */,
-				C20418221FD7D86E00222F12 /* SegmentView.swift */,
+				C20418221FD7D86E00222F12 /* SegmentControl.swift */,
+				C2F36E441FD93E7100B434F3 /* CustomAnimationLabel.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -612,11 +615,12 @@
 				C2EB0A441FD521F9009BD2CE /* BaseViewController.swift in Sources */,
 				64B6C00D1FD2F9A200DE1AC0 /* AppDelegate.swift in Sources */,
 				C2EB0A421FD521F9009BD2CE /* BaseNavigationController.swift in Sources */,
-				C20418231FD7D86E00222F12 /* SegmentView.swift in Sources */,
+				C20418231FD7D86E00222F12 /* SegmentControl.swift in Sources */,
 				C296497A1FD54A540020EFBB /* MyMusicViewController.swift in Sources */,
 				C2EB0A4B1FD5308F009BD2CE /* WellcomeViewController.swift in Sources */,
 				C296497E1FD54A700020EFBB /* AccountViewController.swift in Sources */,
 				C296497C1FD54A650020EFBB /* DynamicViewController.swift in Sources */,
+				C2F36E451FD93E7100B434F3 /* CustomAnimationLabel.swift in Sources */,
 				C29649741FD546EA0020EFBB /* DiscoverMusicViewController.swift in Sources */,
 				C2EB0A431FD521F9009BD2CE /* BaseTabBarViewController.swift in Sources */,
 				C23660671FD6465B00A16FE7 /* UIColor_Extension.swift in Sources */,

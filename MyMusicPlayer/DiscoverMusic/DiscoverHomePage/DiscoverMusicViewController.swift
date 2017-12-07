@@ -10,6 +10,7 @@
 
 import UIKit
 
+
 protocol DiscoverMusicViewControllerViewInput : class {
 
     
@@ -28,6 +29,10 @@ class DiscoverMusicViewController: BaseViewController , DiscoverMusicViewControl
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationTitle = "发现音乐"
+        
+        let segmentControl = SegmentControl(items: ["新歌榜","推荐歌曲","经典老歌","每日推荐","私人电台",])
+        segmentControl.frame = CGRect(x: 0, y: 64, width: Swidth, height: 40)
+        view.addSubview(segmentControl)
     }
 }
 
