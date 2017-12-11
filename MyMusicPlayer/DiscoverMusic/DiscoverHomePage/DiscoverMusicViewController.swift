@@ -10,33 +10,43 @@
 
 import UIKit
 
-
-protocol DiscoverMusicViewControllerViewInput : class {
-
-    
-}
-
-protocol DiscoverMusicViewControllerViewOutput {
-    
-    
-}
-
-
-class DiscoverMusicViewController: BaseViewController , DiscoverMusicViewControllerViewInput {
-    
-    var viewOutput : DiscoverMusicViewControllerViewOutput?
+class DiscoverMusicViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationTitle = "发现音乐"
         
-        let segmentControl = SegmentControl(items: ["新歌榜","推荐歌曲","经典老歌","每日推荐","私人电台",])
+        let segmentControl = SegmentControl(items: ["新歌榜","推荐歌曲","经典老歌","每日推荐","私人电台"])
         segmentControl.frame = CGRect(x: 0, y: 64, width: Swidth, height: 40)
+        
+//        segmentControl.selectionIndicatorColor = UIColor.blue
+//        segmentControl.labelNormalColor = UIColor.brown
+//        segmentControl.labelSelectColor = UIColor.blue
+        
         view.addSubview(segmentControl)
+        
+        
+        let contentScrollView = ReuseMachanismScrollView(frame: CGRect(x: 0, y: 105, width: Swidth, height: SHeight - 40 - 105))
+        contentScrollView.dateSource = self
+        contentScrollView.backgroundColor = UIColor.blue
+        view.addSubview(contentScrollView)
     }
 }
 
-extension DiscoverMusicViewController{
+extension DiscoverMusicViewController:UIScrollViewDateSource{
+    func itemSizeForRow(scrollView: ReuseMachanismScrollView, index: Int) -> CGSize? {
+        return CGSize(width: 100, height: 100)   
+    }
+    
+
+    func numberOfItems(inScrollView: ReuseMachanismScrollView) -> Int? {
+        return 20
+    }
+    
+    func cellForRow(scrollView: ReuseMachanismScrollView, index: Int) -> UIScrollViewCell? {
+        print("idex",index)
+        return UIScrollViewCell(frame: CGRect(x: 0, y: 65, width: Swidth / 2, height: SHeight - 40 - 65), reuseIdentifier: "reusableCell")
+    }
     
 }
 

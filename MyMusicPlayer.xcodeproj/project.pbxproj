@@ -24,7 +24,15 @@
 		C2EB0A431FD521F9009BD2CE /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB0A401FD521F9009BD2CE /* BaseTabBarViewController.swift */; };
 		C2EB0A441FD521F9009BD2CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB0A411FD521F9009BD2CE /* BaseViewController.swift */; };
 		C2EB0A4B1FD5308F009BD2CE /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB0A4A1FD5308F009BD2CE /* WellcomeViewController.swift */; };
-		C2F36E451FD93E7100B434F3 /* CustomAnimationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F36E441FD93E7100B434F3 /* CustomAnimationLabel.swift */; };
+		C2F1236E1FDE1FAB00739B23 /* ReuseMachanismScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1236D1FDE1FAB00739B23 /* ReuseMachanismScrollView.swift */; };
+		C2F1932E1FDA7D7B009F406B /* ContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1932D1FDA7D7B009F406B /* ContentTableViewController.swift */; };
+		C2F193301FDA7F63009F406B /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1932F1FDA7F63009F406B /* UseCase.swift */; };
+		C2F193321FDA8218009F406B /* ContentTableViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F193311FDA8218009F406B /* ContentTableViewPresenter.swift */; };
+		C2F193341FDA825C009F406B /* ContentTableViewCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F193331FDA825C009F406B /* ContentTableViewCase.swift */; };
+		C2F193361FDA8295009F406B /* ContentTableViewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F193351FDA8295009F406B /* ContentTableViewRepository.swift */; };
+		C2F193381FDA82C4009F406B /* ContentTableViewRequestValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F193371FDA82C4009F406B /* ContentTableViewRequestValue.swift */; };
+		C2F1933A1FDA8320009F406B /* ContentTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F193391FDA8320009F406B /* ContentTableViewModel.swift */; };
+		C2F1933C1FDA8362009F406B /* ContentTableViewApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1933B1FDA8362009F406B /* ContentTableViewApi.swift */; };
 		D312908C97CB5D7E3A8C08D3 /* Pods_MyMusicPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93A8D58262BB938AFAD3373 /* Pods_MyMusicPlayerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +83,15 @@
 		C2EB0A401FD521F9009BD2CE /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		C2EB0A411FD521F9009BD2CE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C2EB0A4A1FD5308F009BD2CE /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
-		C2F36E441FD93E7100B434F3 /* CustomAnimationLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimationLabel.swift; sourceTree = "<group>"; };
+		C2F1236D1FDE1FAB00739B23 /* ReuseMachanismScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseMachanismScrollView.swift; sourceTree = "<group>"; };
+		C2F1932D1FDA7D7B009F406B /* ContentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewController.swift; sourceTree = "<group>"; };
+		C2F1932F1FDA7F63009F406B /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		C2F193311FDA8218009F406B /* ContentTableViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewPresenter.swift; sourceTree = "<group>"; };
+		C2F193331FDA825C009F406B /* ContentTableViewCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCase.swift; sourceTree = "<group>"; };
+		C2F193351FDA8295009F406B /* ContentTableViewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewRepository.swift; sourceTree = "<group>"; };
+		C2F193371FDA82C4009F406B /* ContentTableViewRequestValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewRequestValue.swift; sourceTree = "<group>"; };
+		C2F193391FDA8320009F406B /* ContentTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewModel.swift; sourceTree = "<group>"; };
+		C2F1933B1FDA8362009F406B /* ContentTableViewApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewApi.swift; sourceTree = "<group>"; };
 		F10DA9B1090B2953C21345CD /* Pods-MyMusicPlayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMusicPlayerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMusicPlayerUITests/Pods-MyMusicPlayerUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,7 +206,7 @@
 			children = (
 				C23660661FD6465B00A16FE7 /* UIColor_Extension.swift */,
 				C20418221FD7D86E00222F12 /* SegmentControl.swift */,
-				C2F36E441FD93E7100B434F3 /* CustomAnimationLabel.swift */,
+				C2F1236D1FDE1FAB00739B23 /* ReuseMachanismScrollView.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -199,6 +215,13 @@
 			isa = PBXGroup;
 			children = (
 				C29649731FD546EA0020EFBB /* DiscoverMusicViewController.swift */,
+				C2F1932D1FDA7D7B009F406B /* ContentTableViewController.swift */,
+				C2F193311FDA8218009F406B /* ContentTableViewPresenter.swift */,
+				C2F193331FDA825C009F406B /* ContentTableViewCase.swift */,
+				C2F193351FDA8295009F406B /* ContentTableViewRepository.swift */,
+				C2F193371FDA82C4009F406B /* ContentTableViewRequestValue.swift */,
+				C2F193391FDA8320009F406B /* ContentTableViewModel.swift */,
+				C2F1933B1FDA8362009F406B /* ContentTableViewApi.swift */,
 			);
 			path = DiscoverHomePage;
 			sourceTree = "<group>";
@@ -242,6 +265,7 @@
 				C2EB0A3F1FD521F9009BD2CE /* BaseNavigationController.swift */,
 				C2EB0A401FD521F9009BD2CE /* BaseTabBarViewController.swift */,
 				C2EB0A411FD521F9009BD2CE /* BaseViewController.swift */,
+				C2F1932F1FDA7F63009F406B /* UseCase.swift */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -614,15 +638,23 @@
 			files = (
 				C2EB0A441FD521F9009BD2CE /* BaseViewController.swift in Sources */,
 				64B6C00D1FD2F9A200DE1AC0 /* AppDelegate.swift in Sources */,
+				C2F193361FDA8295009F406B /* ContentTableViewRepository.swift in Sources */,
+				C2F1932E1FDA7D7B009F406B /* ContentTableViewController.swift in Sources */,
 				C2EB0A421FD521F9009BD2CE /* BaseNavigationController.swift in Sources */,
+				C2F1933A1FDA8320009F406B /* ContentTableViewModel.swift in Sources */,
 				C20418231FD7D86E00222F12 /* SegmentControl.swift in Sources */,
 				C296497A1FD54A540020EFBB /* MyMusicViewController.swift in Sources */,
+				C2F1236E1FDE1FAB00739B23 /* ReuseMachanismScrollView.swift in Sources */,
+				C2F193301FDA7F63009F406B /* UseCase.swift in Sources */,
 				C2EB0A4B1FD5308F009BD2CE /* WellcomeViewController.swift in Sources */,
+				C2F193321FDA8218009F406B /* ContentTableViewPresenter.swift in Sources */,
 				C296497E1FD54A700020EFBB /* AccountViewController.swift in Sources */,
+				C2F193341FDA825C009F406B /* ContentTableViewCase.swift in Sources */,
+				C2F1933C1FDA8362009F406B /* ContentTableViewApi.swift in Sources */,
 				C296497C1FD54A650020EFBB /* DynamicViewController.swift in Sources */,
-				C2F36E451FD93E7100B434F3 /* CustomAnimationLabel.swift in Sources */,
 				C29649741FD546EA0020EFBB /* DiscoverMusicViewController.swift in Sources */,
 				C2EB0A431FD521F9009BD2CE /* BaseTabBarViewController.swift in Sources */,
+				C2F193381FDA82C4009F406B /* ContentTableViewRequestValue.swift in Sources */,
 				C23660671FD6465B00A16FE7 /* UIColor_Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
