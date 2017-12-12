@@ -11,43 +11,86 @@
 import UIKit
 
 class DiscoverMusicViewController: BaseViewController {
-
+    
+    let items = ["新歌榜","推荐歌曲","经典老歌","每日推荐","私人电台"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationTitle = "发现音乐"
-        
-        let segmentControl = SegmentControl(items: ["新歌榜","推荐歌曲","经典老歌","每日推荐","私人电台"])
+       
+        let segmentControl = SegmentControl(items: items)
         segmentControl.frame = CGRect(x: 0, y: 64, width: Swidth, height: 40)
-        
+        segmentControl.delegate = self
 //        segmentControl.selectionIndicatorColor = UIColor.blue
 //        segmentControl.labelNormalColor = UIColor.brown
 //        segmentControl.labelSelectColor = UIColor.blue
         
         view.addSubview(segmentControl)
         
-        
+//
         let contentScrollView = ReuseMachanismScrollView(frame: CGRect(x: 0, y: 105, width: Swidth, height: SHeight - 40 - 105))
         contentScrollView.dateSource = self
-        contentScrollView.backgroundColor = UIColor.blue
+        contentScrollView.delegate = self
+        contentScrollView.isPagingEnabled = true
+        contentScrollView.scrollsToTop = false
+        contentScrollView.backgroundColor = UIColor.brown
+        contentScrollView.contentSize = CGSize(width: CGFloat(items.count) * Swidth, height: 0)
         view.addSubview(contentScrollView)
     }
 }
 
+extension DiscoverMusicViewController :SegmentDelegate{
+    
+    func segmentItemDidClick(tag: Int) {
+        if tag < items.count {
+            print("tag = ", tag)
+        }
+    }
+    
+}
+extension DiscoverMusicViewController :UIScrollViewDelegate{
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        if scrollView != self { return }
+        
+        print("scrollViewWillBeginDragging",scrollView.contentOffset.x)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if scrollView != self { return }
+        print("scrollViewDidScroll",scrollView.contentOffset.x)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        if scrollView != self { return }
+        print("scrollViewDidEndDecelerating",scrollView.contentOffset.x)
+    }
+    
+}
+
 extension DiscoverMusicViewController:UIScrollViewDateSource{
     func itemSizeForRow(scrollView: ReuseMachanismScrollView, index: Int) -> CGSize? {
-        return CGSize(width: 100, height: 100)   
+        return CGSize(width: Swidth, height: SHeight - 105)
     }
-    
+
 
     func numberOfItems(inScrollView: ReuseMachanismScrollView) -> Int? {
-        return 20
+        return 6
     }
-    
+
     func cellForRow(scrollView: ReuseMachanismScrollView, index: Int) -> UIScrollViewCell? {
         print("idex",index)
-        return UIScrollViewCell(frame: CGRect(x: 0, y: 65, width: Swidth / 2, height: SHeight - 40 - 65), reuseIdentifier: "reusableCell")
+        //frame: CGRect(x: 0, y: 65, width: Swidth / 2, height: SHeight - 40 - 65),
+        let identifier = "reusableCell"
+        var cell = scrollView.dequeueReusableCellIdentifier(identifier)
+        
+        if cell == nil {
+            cell = UIScrollViewCell(reuseIdentifier: "reusableCell")
+        }
+        
+        return cell
     }
-    
+
 }
 
 

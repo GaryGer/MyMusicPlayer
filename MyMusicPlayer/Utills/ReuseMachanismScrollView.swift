@@ -25,7 +25,7 @@ class ReuseMachanismScrollView: UIScrollView {
     var itemSpace :CGFloat = 0.0
     fileprivate var itemSize :CGSize = CGSize(width: 50, height: 50)    //default Size
    
-    fileprivate var displayChildCells :[UIScrollViewCell]?
+    fileprivate var childCells :[UIScrollViewCell]?
     fileprivate var displayItemsSizeList :[CGSize]?
     fileprivate var scrollViewCell :UIScrollViewCell?
     fileprivate var numberOfItems :Int = 0
@@ -47,8 +47,7 @@ class ReuseMachanismScrollView: UIScrollView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-//        print("layoutSubviews")
+
     }
     
     override func willMove(toSuperview newSuperview: UIView?) {
@@ -59,42 +58,26 @@ class ReuseMachanismScrollView: UIScrollView {
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        var displayNum = 0
-        for itemCount in 0..<numberOfItems {
-//            if let displayItemSize = itemSize(itemCount){
-////                displayItemsSizeList?.append(displayItemSize)
-//
-//                //如果 displayItemsSizeList 中的显示超出屏幕 break
-//
-//            }
-           displayNum = numberOfDisplay(direction, itemNum: itemCount)
+        //创建两个view
+        for index in 0..<2 {
+            //从代理对象获取itemSize
+            itemSize = getItemSize(index) ?? CGSize(width: 50, height: 50)
+            reuseCellPool.setItemSize(sizeDict: [index:itemSize])
+            if let optionCell = creatCellForRowAtIndex(index){
+                childCells?.append(optionCell)
+                optionCell.frame = CGRect(x: 0 + CGFloat(index) * Swidth, y: 0, width: bounds.width, height: bounds.height)
+                optionCell.backgroundColor = UIColor(red: CGFloat(index) / 6.0, green: 0.0, blue: 0.0, alpha: 1.0)
+                addSubview(optionCell)
+            }
         }
+    }
+    
+    public func scrollViewDidSelect(_ atIndex:Int){
         
-        //先确定可以显示 i 个cell，然后创建 i+1 个cell
-//        let displayNum = numberOfDisplay(direction) + 1
-//        print(displayNum)
-//        for index in 0..<displayNum{
-//            let displayCell = creatCellForRowAtIndex(index)
-//
-//            if let optionDisPCell = displayCell {
-//                displayChildCells?.append(optionDisPCell)
-//            }
-//        }
     }
-    
-    private func numberOfDisplay(_ direction :SubViewDirection,itemNum:Int) -> Int{
-        switch direction {
-        case .horizontal:
-            displayItemCount = Int(Swidth / itemSize.width)
-        case .vertical:
-            displayItemCount = Int(SHeight / itemSize.height)
-        }
-        return displayItemCount
-    }
-    
-    
-    
 }
+
+
 extension ReuseMachanismScrollView{
     
     fileprivate func numberOfCell() -> Int?{
@@ -102,10 +85,11 @@ extension ReuseMachanismScrollView{
     }
     
     fileprivate func creatCellForRowAtIndex(_ index:Int) -> UIScrollViewCell?{
-        return dateSource?.cellForRow(scrollView: self, index: index)
+        scrollViewCell = dateSource?.cellForRow(scrollView: self, index: index)
+        return scrollViewCell
     }
     
-    fileprivate func itemSize(_ index:Int) -> CGSize?{
+    fileprivate func getItemSize(_ index:Int) -> CGSize?{
         return dateSource?.itemSizeForRow(scrollView: self, index: index)
     }
 }
@@ -139,13 +123,12 @@ extension ReuseMachanismScrollView :UIScrollViewDateSource{
 
 class UIScrollViewCell: UIView {
     
-    convenience init(frame: CGRect,reuseIdentifier:String){
-        self.init(frame: frame)
-        //set dequeueCells
+    convenience init(reuseIdentifier:String){
+        
+        //需要知道itemSize
+        self.init(frame: CGRect.zero)
+        CellDeueuePool.default.setDequeueCells(cellDict: [reuseIdentifier:self])
     }
-    
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -154,18 +137,36 @@ class UIScrollViewCell: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
 }
 
 class CellDeueuePool {
     
     var dequeueCells:[[String:UIScrollViewCell]]?
+    var itemSizes :[[Int:CGSize]]?
     
     static let `default` = CellDeueuePool()
     private init(){}
-    
-    func setDequeueCells(dequeueCells:[[String:UIScrollViewCell]]?){
-        self.dequeueCells = dequeueCells
+    func setItemSize(sizeDict:[Int:CGSize]?) {
+        if let optionSizeDict = sizeDict {
+            if let optionItemSizes = itemSizes {
+                for item in optionItemSizes {
+                    if item != optionSizeDict {
+                        self.itemSizes?.append(optionSizeDict)
+                    }
+                }
+            }
+        }
+    }
+    func setDequeueCells(cellDict:[String:UIScrollViewCell]?){
+        if let optionCellDict = cellDict {
+            if let optionDueueCells = dequeueCells {
+                for item in optionDueueCells {
+                    if item != optionCellDict {
+                        self.dequeueCells?.append(optionCellDict)
+                    }
+                }
+            }
+        }
     }
     
     func getCellFromDequeue(identifier:String) -> UIScrollViewCell?{

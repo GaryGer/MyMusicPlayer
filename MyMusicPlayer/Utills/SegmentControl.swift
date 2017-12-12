@@ -21,6 +21,7 @@ class SegmentControl: UIControl {
     fileprivate var labelWidth :CGFloat = 100.0
     fileprivate var labelHeight :CGFloat = 40
     fileprivate var labelY :CGFloat = 0.0
+    var delegate :SegmentDelegate?
     
     fileprivate var transformLabel :CustomAnimationLabel?
     fileprivate lazy var transformLabels :[CustomAnimationLabel]? = {
@@ -100,7 +101,7 @@ extension SegmentControl {
             topScrollView.addSubview(customLabel)
             if i == defaultSlectIndex && defaultSlectIndex < self.items.count{
                 defaultSelectLabel(transformLabels?[i])
-            }else{
+            }else if defaultSlectIndex >= self.items.count {
                 defaultSelectLabel(transformLabels?[0])
             }
         }
@@ -109,14 +110,17 @@ extension SegmentControl {
     }
     
     @objc fileprivate func customLabelClick(recognizer:UIGestureRecognizer){
-        transformLabel?.isSelected = false
         let clickLabel = recognizer.view as? CustomAnimationLabel
-        clickLabel?.isSelected = true
-        transformLabel = clickLabel
-        setContentOffSet(clickLabel)
+        if transformLabel?.tag == clickLabel?.tag { return }
+        transformLabelState(clickLabel)
     }
     //默认选择
     fileprivate func defaultSelectLabel(_ selectLabel:CustomAnimationLabel?){
+        if transformLabel?.tag == selectLabel?.tag { return }
+        transformLabelState(selectLabel)
+    }
+    
+    fileprivate func transformLabelState(_ selectLabel:CustomAnimationLabel?){
         transformLabel?.isSelected = false
         selectLabel?.isSelected = true
         transformLabel = selectLabel
@@ -139,8 +143,12 @@ extension SegmentControl {
             scrollViewNeedNotScroll()
         }
         
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.25, animations: {
             self.selectionIndicator.center.x = (clickLabel?.center.x ?? 0)
+        }) { (compelete) in
+            if compelete {
+                self.delegate?.segmentItemDidClick(tag: clickLabel?.tag ?? 1000)
+            }
         }
     }
     
