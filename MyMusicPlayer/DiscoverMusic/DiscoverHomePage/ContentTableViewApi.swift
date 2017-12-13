@@ -11,7 +11,9 @@ import Moya
 
 class ContentTableViewApi {
     let provider = MoyaProvider<ContentTableViewStatement>()
-    
+//    func getResponseData() -> Observable<ContentTableViewModel>{
+//        return provider.reques
+//    }
 }
 
 enum ContentTableViewStatement {
@@ -20,12 +22,20 @@ enum ContentTableViewStatement {
 
 extension ContentTableViewStatement :TargetType{
     var baseURL: URL {
-        return URL(string: "")!
+        return URL(string: "http://tingapi.ting.baidu.com")!
     }
     
     var path: String {
-        return ""
+        return "/v1/restserver/ting"
     }
+    
+    var parameters :[String: Any]{
+        return ["format":"json",
+                "calback":"",
+                "from":"webapp_music",
+                "method":"baidu.ting.billboard.billList&type=1&size=10&offset=0"]
+    }
+    
     
     var method: Moya.Method {
         return .get
@@ -36,12 +46,11 @@ extension ContentTableViewStatement :TargetType{
     }
     
     var task: Task {
-        return .requestPlain
+        return .requestParameters(parameters: self.parameters, encoding: URLEncoding.default)
     }
     
     var headers: [String : String]? {
         return nil
     }
-    
     
 }

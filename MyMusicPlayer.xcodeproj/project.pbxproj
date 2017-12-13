@@ -20,11 +20,11 @@
 		C296497A1FD54A540020EFBB /* MyMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649791FD54A540020EFBB /* MyMusicViewController.swift */; };
 		C296497C1FD54A650020EFBB /* DynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C296497B1FD54A650020EFBB /* DynamicViewController.swift */; };
 		C296497E1FD54A700020EFBB /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C296497D1FD54A700020EFBB /* AccountViewController.swift */; };
+		C2975E1E1FE0B36F000B64FA /* ContentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2975E1D1FE0B36F000B64FA /* ContentScrollView.swift */; };
 		C2EB0A421FD521F9009BD2CE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB0A3F1FD521F9009BD2CE /* BaseNavigationController.swift */; };
 		C2EB0A431FD521F9009BD2CE /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB0A401FD521F9009BD2CE /* BaseTabBarViewController.swift */; };
 		C2EB0A441FD521F9009BD2CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB0A411FD521F9009BD2CE /* BaseViewController.swift */; };
 		C2EB0A4B1FD5308F009BD2CE /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB0A4A1FD5308F009BD2CE /* WellcomeViewController.swift */; };
-		C2F1236E1FDE1FAB00739B23 /* ReuseMachanismScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1236D1FDE1FAB00739B23 /* ReuseMachanismScrollView.swift */; };
 		C2F1932E1FDA7D7B009F406B /* ContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1932D1FDA7D7B009F406B /* ContentTableViewController.swift */; };
 		C2F193301FDA7F63009F406B /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1932F1FDA7F63009F406B /* UseCase.swift */; };
 		C2F193321FDA8218009F406B /* ContentTableViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F193311FDA8218009F406B /* ContentTableViewPresenter.swift */; };
@@ -79,11 +79,11 @@
 		C29649791FD54A540020EFBB /* MyMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicViewController.swift; sourceTree = "<group>"; };
 		C296497B1FD54A650020EFBB /* DynamicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicViewController.swift; sourceTree = "<group>"; };
 		C296497D1FD54A700020EFBB /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		C2975E1D1FE0B36F000B64FA /* ContentScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentScrollView.swift; sourceTree = "<group>"; };
 		C2EB0A3F1FD521F9009BD2CE /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		C2EB0A401FD521F9009BD2CE /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		C2EB0A411FD521F9009BD2CE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C2EB0A4A1FD5308F009BD2CE /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
-		C2F1236D1FDE1FAB00739B23 /* ReuseMachanismScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseMachanismScrollView.swift; sourceTree = "<group>"; };
 		C2F1932D1FDA7D7B009F406B /* ContentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewController.swift; sourceTree = "<group>"; };
 		C2F1932F1FDA7F63009F406B /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		C2F193311FDA8218009F406B /* ContentTableViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewPresenter.swift; sourceTree = "<group>"; };
@@ -206,7 +206,6 @@
 			children = (
 				C23660661FD6465B00A16FE7 /* UIColor_Extension.swift */,
 				C20418221FD7D86E00222F12 /* SegmentControl.swift */,
-				C2F1236D1FDE1FAB00739B23 /* ReuseMachanismScrollView.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -215,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				C29649731FD546EA0020EFBB /* DiscoverMusicViewController.swift */,
+				C2975E1D1FE0B36F000B64FA /* ContentScrollView.swift */,
 				C2F1932D1FDA7D7B009F406B /* ContentTableViewController.swift */,
 				C2F193311FDA8218009F406B /* ContentTableViewPresenter.swift */,
 				C2F193331FDA825C009F406B /* ContentTableViewCase.swift */,
@@ -644,7 +644,6 @@
 				C2F1933A1FDA8320009F406B /* ContentTableViewModel.swift in Sources */,
 				C20418231FD7D86E00222F12 /* SegmentControl.swift in Sources */,
 				C296497A1FD54A540020EFBB /* MyMusicViewController.swift in Sources */,
-				C2F1236E1FDE1FAB00739B23 /* ReuseMachanismScrollView.swift in Sources */,
 				C2F193301FDA7F63009F406B /* UseCase.swift in Sources */,
 				C2EB0A4B1FD5308F009BD2CE /* WellcomeViewController.swift in Sources */,
 				C2F193321FDA8218009F406B /* ContentTableViewPresenter.swift in Sources */,
@@ -652,6 +651,7 @@
 				C2F193341FDA825C009F406B /* ContentTableViewCase.swift in Sources */,
 				C2F1933C1FDA8362009F406B /* ContentTableViewApi.swift in Sources */,
 				C296497C1FD54A650020EFBB /* DynamicViewController.swift in Sources */,
+				C2975E1E1FE0B36F000B64FA /* ContentScrollView.swift in Sources */,
 				C29649741FD546EA0020EFBB /* DiscoverMusicViewController.swift in Sources */,
 				C2EB0A431FD521F9009BD2CE /* BaseTabBarViewController.swift in Sources */,
 				C2F193381FDA82C4009F406B /* ContentTableViewRequestValue.swift in Sources */,

@@ -18,9 +18,18 @@ protocol ContentTableViewControllerOutput :class {
 
 class ContentTableViewController: UITableViewController,ContentTableViewControllerInput {
 
+    var refresh = false {
+        didSet{
+            if refresh {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,21 +41,26 @@ class ContentTableViewController: UITableViewController,ContentTableViewControll
         
     }
 
-
 }
 
 extension ContentTableViewController{
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 20
     }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let reuseIdentifier = "reuseCell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)
+        if cell == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: reuseIdentifier)
+        }
+        cell?.textLabel?.text = "就是我"
+        
+        return cell!
+    }
+    
 }
 
 

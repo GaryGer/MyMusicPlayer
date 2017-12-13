@@ -145,11 +145,8 @@ extension SegmentControl {
         
         UIView.animate(withDuration: 0.25, animations: {
             self.selectionIndicator.center.x = (clickLabel?.center.x ?? 0)
-        }) { (compelete) in
-            if compelete {
-                self.delegate?.segmentItemDidClick(tag: clickLabel?.tag ?? 1000)
-            }
-        }
+        })
+        self.delegate?.segmentItemDidClick(tag: clickLabel?.tag ?? 1000)
     }
     
     fileprivate func scrollViewNeedNotScroll(){

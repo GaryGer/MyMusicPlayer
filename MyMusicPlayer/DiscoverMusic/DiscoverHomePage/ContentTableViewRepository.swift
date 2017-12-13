@@ -20,7 +20,7 @@ class ContentTableViewRepository :ContentRepositoryProtocol{
     }
     
     func requestTableViewContent() -> Observable<ContentTableViewModel> {
-        return Observable.empty()
+        return api?.getResponseData()
     }
     
     
