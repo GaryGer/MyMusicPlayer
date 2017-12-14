@@ -16,6 +16,10 @@
 		9B3A7226B526F7D9FD6FDDDA /* Pods_MyMusicPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206417D253FC18EC763C5712 /* Pods_MyMusicPlayer.framework */; };
 		C20418231FD7D86E00222F12 /* SegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20418221FD7D86E00222F12 /* SegmentControl.swift */; };
 		C23660671FD6465B00A16FE7 /* UIColor_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23660661FD6465B00A16FE7 /* UIColor_Extension.swift */; };
+		C27DD8FB1FE223B9005F32F2 /* ObjectMapperUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27DD8FA1FE223B8005F32F2 /* ObjectMapperUtil.swift */; };
+		C27DD8FE1FE25FBC005F32F2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27DD8FC1FE25FBC005F32F2 /* TableViewCell.swift */; };
+		C27DD8FF1FE25FBC005F32F2 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27DD8FD1FE25FBC005F32F2 /* TableViewCell.xib */; };
+		C27DD9031FE2733C005F32F2 /* AssetLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27DD9011FE2733B005F32F2 /* AssetLoader.swift */; };
 		C29649741FD546EA0020EFBB /* DiscoverMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649731FD546EA0020EFBB /* DiscoverMusicViewController.swift */; };
 		C296497A1FD54A540020EFBB /* MyMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29649791FD54A540020EFBB /* MyMusicViewController.swift */; };
 		C296497C1FD54A650020EFBB /* DynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C296497B1FD54A650020EFBB /* DynamicViewController.swift */; };
@@ -75,6 +79,10 @@
 		BDCCF9326DF984525D50D10C /* Pods_MyMusicPlayerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMusicPlayerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20418221FD7D86E00222F12 /* SegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControl.swift; sourceTree = "<group>"; };
 		C23660661FD6465B00A16FE7 /* UIColor_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Extension.swift; sourceTree = "<group>"; };
+		C27DD8FA1FE223B8005F32F2 /* ObjectMapperUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectMapperUtil.swift; sourceTree = "<group>"; };
+		C27DD8FC1FE25FBC005F32F2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C27DD8FD1FE25FBC005F32F2 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		C27DD9011FE2733B005F32F2 /* AssetLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetLoader.swift; sourceTree = "<group>"; };
 		C29649731FD546EA0020EFBB /* DiscoverMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverMusicViewController.swift; sourceTree = "<group>"; };
 		C29649791FD54A540020EFBB /* MyMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicViewController.swift; sourceTree = "<group>"; };
 		C296497B1FD54A650020EFBB /* DynamicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +158,6 @@
 			children = (
 				C23660651FD6462000A16FE7 /* Utills */,
 				C2EB0A3D1FD521F9009BD2CE /* Base */,
-				C2EB0A491FD5305E009BD2CE /* LaunchModule */,
 				C2EB0A451FD52FAE009BD2CE /* DiscoverMusic */,
 				C2EB0A461FD52FB8009BD2CE /* MyMusic */,
 				C2EB0A471FD52FC3009BD2CE /* Dynamic */,
@@ -206,6 +213,8 @@
 			children = (
 				C23660661FD6465B00A16FE7 /* UIColor_Extension.swift */,
 				C20418221FD7D86E00222F12 /* SegmentControl.swift */,
+				C27DD8FA1FE223B8005F32F2 /* ObjectMapperUtil.swift */,
+				C27DD9011FE2733B005F32F2 /* AssetLoader.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -216,6 +225,8 @@
 				C29649731FD546EA0020EFBB /* DiscoverMusicViewController.swift */,
 				C2975E1D1FE0B36F000B64FA /* ContentScrollView.swift */,
 				C2F1932D1FDA7D7B009F406B /* ContentTableViewController.swift */,
+				C27DD8FC1FE25FBC005F32F2 /* TableViewCell.swift */,
+				C27DD8FD1FE25FBC005F32F2 /* TableViewCell.xib */,
 				C2F193311FDA8218009F406B /* ContentTableViewPresenter.swift */,
 				C2F193331FDA825C009F406B /* ContentTableViewCase.swift */,
 				C2F193351FDA8295009F406B /* ContentTableViewRepository.swift */,
@@ -255,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				C2EB0A3E1FD521F9009BD2CE /* BaseView */,
+				C2EB0A491FD5305E009BD2CE /* LaunchModule */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -441,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64B6C0171FD2F9A200DE1AC0 /* LaunchScreen.storyboard in Resources */,
+				C27DD8FF1FE25FBC005F32F2 /* TableViewCell.xib in Resources */,
 				64B6C0141FD2F9A200DE1AC0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +523,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCache/RxCache.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -524,6 +538,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -639,12 +654,14 @@
 				C2EB0A441FD521F9009BD2CE /* BaseViewController.swift in Sources */,
 				64B6C00D1FD2F9A200DE1AC0 /* AppDelegate.swift in Sources */,
 				C2F193361FDA8295009F406B /* ContentTableViewRepository.swift in Sources */,
+				C27DD9031FE2733C005F32F2 /* AssetLoader.swift in Sources */,
 				C2F1932E1FDA7D7B009F406B /* ContentTableViewController.swift in Sources */,
 				C2EB0A421FD521F9009BD2CE /* BaseNavigationController.swift in Sources */,
 				C2F1933A1FDA8320009F406B /* ContentTableViewModel.swift in Sources */,
 				C20418231FD7D86E00222F12 /* SegmentControl.swift in Sources */,
 				C296497A1FD54A540020EFBB /* MyMusicViewController.swift in Sources */,
 				C2F193301FDA7F63009F406B /* UseCase.swift in Sources */,
+				C27DD8FB1FE223B9005F32F2 /* ObjectMapperUtil.swift in Sources */,
 				C2EB0A4B1FD5308F009BD2CE /* WellcomeViewController.swift in Sources */,
 				C2F193321FDA8218009F406B /* ContentTableViewPresenter.swift in Sources */,
 				C296497E1FD54A700020EFBB /* AccountViewController.swift in Sources */,
@@ -652,6 +669,7 @@
 				C2F1933C1FDA8362009F406B /* ContentTableViewApi.swift in Sources */,
 				C296497C1FD54A650020EFBB /* DynamicViewController.swift in Sources */,
 				C2975E1E1FE0B36F000B64FA /* ContentScrollView.swift in Sources */,
+				C27DD8FE1FE25FBC005F32F2 /* TableViewCell.swift in Sources */,
 				C29649741FD546EA0020EFBB /* DiscoverMusicViewController.swift in Sources */,
 				C2EB0A431FD521F9009BD2CE /* BaseTabBarViewController.swift in Sources */,
 				C2F193381FDA82C4009F406B /* ContentTableViewRequestValue.swift in Sources */,

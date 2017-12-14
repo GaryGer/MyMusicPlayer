@@ -9,18 +9,18 @@
 import RxSwift
 
 protocol ContentRepositoryProtocol {
-    func requestTableViewContent() -> Observable<ContentTableViewModel>
+    func requestTableViewContent() -> Observable<SongList>
 }
 
 class ContentTableViewRepository :ContentRepositoryProtocol{
-    var api :ContentTableViewApi?
+    var api :ContentTableViewApi!
     
     init(api:ContentTableViewApi?) {
         self.api = api
     }
     
-    func requestTableViewContent() -> Observable<ContentTableViewModel> {
-        return api?.getResponseData()
+    func requestTableViewContent() -> Observable<SongList> {
+        return api.getResponseData()
     }
     
     

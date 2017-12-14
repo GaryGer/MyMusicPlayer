@@ -17,6 +17,8 @@ class ContentScrollView: UIScrollView {
         }
     }
     
+    open var type :Int?
+    
     fileprivate lazy var contentTableViews :[ContentTableViewController] = {
         let tableviews = [ContentTableViewController]()
         return tableviews

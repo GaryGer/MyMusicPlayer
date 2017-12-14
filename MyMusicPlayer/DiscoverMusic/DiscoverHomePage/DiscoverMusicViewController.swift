@@ -13,8 +13,8 @@ import UIKit
 class DiscoverMusicViewController: BaseViewController {
     
     
-    fileprivate lazy var segmentItems :[String] = {
-        let items = ["新歌榜","推荐歌曲","经典老歌","每日推荐","私人电台"]
+    fileprivate lazy var segmentItems :[[String:String]] = {
+        let items = [["1":"新歌榜"],["2":"热歌榜"],["11":"摇滚榜"],["12":"爵士榜"],["16":"流行榜"],["21":"欧美金曲"],["22":"经典老歌"],["23":"情歌对唱"],["24":"影视金曲"],["25":"网络歌曲"]]
         return items
     }()
     
@@ -31,9 +31,7 @@ class DiscoverMusicViewController: BaseViewController {
         let segmentControl = SegmentControl(items: segmentItems)
         segmentControl.frame = CGRect(x: 0, y: 64, width: Swidth, height: 40)
         segmentControl.delegate = self
-//        segmentControl.selectionIndicatorColor = UIColor.blue
-//        segmentControl.labelNormalColor = UIColor.brown
-//        segmentControl.labelSelectColor = UIColor.blue
+
         view.addSubview(segmentControl)
         
         view.addSubview(subScrollView)

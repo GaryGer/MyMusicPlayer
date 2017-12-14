@@ -24,6 +24,9 @@ pod 'ObjectMapper'
 #Realm
 pod 'RealmSwift'
 
+# RxCache
+pod 'RxCache', '~> 1.0.2'
+
   target 'MyMusicPlayerTests' do
     inherit! :search_paths
     # Pods for testing

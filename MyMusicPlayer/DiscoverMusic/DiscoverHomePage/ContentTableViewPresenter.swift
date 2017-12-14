@@ -15,7 +15,7 @@ class ContentTableViewPresenter: ContentTableViewControllerOutput {
     
     private weak var viewInput :ContentTableViewControllerInput?
     
-    func attachView(_ view:ContentTableViewControllerInput){
+    func attachView(view:ContentTableViewControllerInput){
         viewInput = view
     }
     
@@ -25,9 +25,10 @@ class ContentTableViewPresenter: ContentTableViewControllerOutput {
     
     func requestTableViewContent(requestValue: ContentTableViewRequestValue?) {
         useCase.execute(requestValue: requestValue, nextHandler: { (model) in
-            
+            print(model.song_list ?? "default")
+            self.viewInput?.getResponseValueSuccess(model: model)
         }, errorHandler: { (error:Error) in
-            
+            self.viewInput?.getResponseValueFaild()
         })
     }
     

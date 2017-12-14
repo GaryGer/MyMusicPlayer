@@ -53,8 +53,10 @@ class SegmentControl: UIControl {
         return topScrView
     }()
     
-    init(items:[String]){
-        self.items = items
+    init(items:[[String:String]]){
+        for dict in items {
+            self.items.append(dict.values.first ?? "default")
+        }
         super.init(frame: CGRect.zero)
     }
     

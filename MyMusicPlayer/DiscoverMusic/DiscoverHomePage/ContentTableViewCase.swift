@@ -8,7 +8,7 @@
 
 import RxSwift
 
-class ContentTableViewCase: UseCase<ContentTableViewRequestValue, ContentTableViewModel> {
+class ContentTableViewCase: UseCase<ContentTableViewRequestValue, SongList> {
     
     var repo :ContentTableViewRepository!
     
@@ -16,7 +16,7 @@ class ContentTableViewCase: UseCase<ContentTableViewRequestValue, ContentTableVi
         self.repo = repo
     }
     
-    override func buildObservable(requestValue: ContentTableViewRequestValue?) -> Observable<ContentTableViewModel> {
+    override func buildObservable(requestValue: ContentTableViewRequestValue?) -> Observable<SongList> {
         return repo.requestTableViewContent()
     }
 }

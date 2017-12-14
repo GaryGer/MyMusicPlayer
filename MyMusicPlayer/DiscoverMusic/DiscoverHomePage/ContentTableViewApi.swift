@@ -10,10 +10,14 @@ import RxSwift
 import Moya
 
 class ContentTableViewApi {
-    let provider = MoyaProvider<ContentTableViewStatement>()
-//    func getResponseData() -> Observable<ContentTableViewModel>{
-//        return provider.reques
-//    }
+    let provider = MoyaProvider<ContentTableViewStatement>(plugins: [NetworkLoggerPlugin(verbose: true)])
+    func getResponseData() -> Observable<SongList>{
+        return provider.rx.request(.ApiForContentTableView())
+            .filterSuccessfulStatusAndRedirectCodes()
+            .asObservable()
+            .mapJSON()
+            .mapObject(type: SongList.self)
+    }
 }
 
 enum ContentTableViewStatement {
@@ -33,7 +37,10 @@ extension ContentTableViewStatement :TargetType{
         return ["format":"json",
                 "calback":"",
                 "from":"webapp_music",
-                "method":"baidu.ting.billboard.billList&type=1&size=10&offset=0"]
+                "method":"baidu.ting.billboard.billList",
+                "type":"1",
+                "size":"10",
+                "offset":"0"]
     }
     
     
