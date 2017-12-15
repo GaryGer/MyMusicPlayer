@@ -25,7 +25,7 @@ class ContentTableViewController: UITableViewController,ContentTableViewControll
     var refresh = false {
         didSet{
             if refresh {
-                viewOutput?.requestTableViewContent(requestValue: ContentTableViewRequestValue())
+//                viewOutput?.requestTableViewContent(requestValue: ContentTableViewRequestValue())
             }
         }
     }

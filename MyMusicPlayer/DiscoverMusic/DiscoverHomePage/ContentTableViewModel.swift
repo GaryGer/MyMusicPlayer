@@ -8,8 +8,9 @@
 
 import UIKit
 import ObjectMapper
+import RxCache
 
-class SongList :Mappable{
+class SongList :Mappable,OMCacheable{
     var song_list :[ContentTableViewModel]?
     
     required init?(map: Map) {
@@ -21,8 +22,7 @@ class SongList :Mappable{
     }
 }
 
-class ContentTableViewModel:Mappable{
-    
+class ContentTableViewModel:Mappable,OMCacheable{
     var song_id :String?
     var title :String?
     var author :String?
@@ -34,7 +34,6 @@ class ContentTableViewModel:Mappable{
     var album_id :String?
     var lrclink :String?
     var country :String?
-    
     required init?(map: Map) {
         
     }

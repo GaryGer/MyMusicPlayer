@@ -281,44 +281,6 @@ public final class Mapper<N: BaseMappable> {
 }
 
 extension Mapper {
-	// MARK: Functions that create model from JSON file
-
-	/// JSON file to Mappable object
-	/// - parameter JSONfile: Filename
-	/// - Returns: Mappable object
-	public func map(JSONfile: String) -> N? {
-		if let path = Bundle.main.path(forResource: JSONfile, ofType: nil) {
-			do {
-				let JSONString = try String(contentsOfFile: path)
-				do {
-					return self.map(JSONString: JSONString)
-				}
-			} catch {
-				return nil
-			}
-		}
-		return nil
-	}
-
-	/// JSON file to Mappable object array
-	/// - parameter JSONfile: Filename
-	/// - Returns: Mappable object array
-	public func mapArray(JSONfile: String) -> [N]? {
-		if let path = Bundle.main.path(forResource: JSONfile, ofType: nil) {
-			do {
-				let JSONString = try String(contentsOfFile: path)
-				do {
-					return self.mapArray(JSONString: JSONString)
-				}
-			} catch {
-				return nil
-			}
-		}
-		return nil
-	}
-}
-
-extension Mapper {
     
 	// MARK: Functions that create JSON from objects	
 	
@@ -340,17 +302,17 @@ extension Mapper {
 	
 	///Maps a dictionary of Objects that conform to Mappable to a JSON dictionary of dictionaries.
 	public func toJSONDictionary(_ dictionary: [String: N]) -> [String: [String: Any]] {
-		return dictionary.map { (arg: (key: String, value: N)) in
+		return dictionary.map { k, v in
 			// convert every value in dictionary to its JSON dictionary equivalent
-			return (arg.key, self.toJSON(arg.value))
+			return (k, self.toJSON(v))
 		}
 	}
 	
 	///Maps a dictionary of Objects that conform to Mappable to a JSON dictionary of dictionaries.
 	public func toJSONDictionaryOfArrays(_ dictionary: [String: [N]]) -> [String: [[String: Any]]] {
-		return dictionary.map { (arg: (key: String, value: [N])) in
+		return dictionary.map { k, v in
 			// convert every value (array) in dictionary to its JSON dictionary equivalent
-			return (arg.key, self.toJSONArray(arg.value))
+			return (k, self.toJSONArray(v))
 		}
 	}
 	
@@ -447,7 +409,7 @@ extension Mapper where N: Hashable {
 }
 
 extension Dictionary {
-	internal func map<K, V>(_ f: (Element) throws -> (K, V)) rethrows -> [K: V] {
+	internal func map<K: Hashable, V>(_ f: (Element) throws -> (K, V)) rethrows -> [K: V] {
 		var mapped = [K: V]()
 
 		for element in self {
@@ -458,7 +420,7 @@ extension Dictionary {
 		return mapped
 	}
 
-	internal func map<K, V>(_ f: (Element) throws -> (K, [V])) rethrows -> [K: [V]] {
+	internal func map<K: Hashable, V>(_ f: (Element) throws -> (K, [V])) rethrows -> [K: [V]] {
 		var mapped = [K: [V]]()
 		
 		for element in self {

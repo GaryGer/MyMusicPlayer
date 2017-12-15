@@ -11,7 +11,7 @@ pod 'RxCocoa'
 # pod 'RxOptional', '~> 3.1'
 
 # UI
-pod 'SnapKit'
+#pod 'SnapKit'
 pod 'MJRefresh'
   # Pods for MyMusicPlayer
 # NetWork
@@ -19,14 +19,14 @@ pod 'Alamofire'
 pod 'Moya'
 pod 'Moya/RxSwift'
 pod 'Kingfisher'
-pod 'ObjectMapper'
+pod 'ObjectMapper', '~> 2.2'
 
 #Realm
 pod 'RealmSwift'
 
 # RxCache
 pod 'RxCache', '~> 1.0.2'
-
+pod 'RxCache/ObjectMapper', '~> 1.0.2'
   target 'MyMusicPlayerTests' do
     inherit! :search_paths
     # Pods for testing

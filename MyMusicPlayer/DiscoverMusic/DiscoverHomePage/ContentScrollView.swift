@@ -9,6 +9,15 @@
 import UIKit
 
 class ContentScrollView: UIScrollView {
+    fileprivate lazy var contentTableViews :[ContentTableViewController] = {
+        let tableviews = [ContentTableViewController]()
+        return tableviews
+    }()
+    
+    fileprivate var isAllowScroll :Bool = false
+    fileprivate var startOffSet_X :CGFloat = 0.0
+    fileprivate var scrollingOffSet_X :CGFloat = 0.0
+    fileprivate var endOffSet_X :CGFloat = 0.0
     
     open var items :Int = 0{
         didSet{
@@ -19,12 +28,20 @@ class ContentScrollView: UIScrollView {
     
     open var type :Int?
     
-    fileprivate lazy var contentTableViews :[ContentTableViewController] = {
-        let tableviews = [ContentTableViewController]()
-        return tableviews
-    }()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.delegate = self
+    }
     
-    private func creatChildTableViews(_ items :Int){
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+extension ContentScrollView {
+    
+    fileprivate func creatChildTableViews(_ items :Int){
         for i in 0..<items {
             let contentTableView = ContentTableViewController(style: .plain)
             
@@ -42,6 +59,46 @@ class ContentScrollView: UIScrollView {
         }
     }
 }
+
+extension ContentScrollView :UIScrollViewDelegate{
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startOffSet_X = scrollView.contentOffset.x
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollingOffSet_X = scrollView.contentOffset.x
+        
+//        if (scrollingOffSet_X / Int(Swidth * 0.5) - scrollingOffSet_X / Int(Swidth * 0.5)) > 0 {
+//            
+//        }
+        
+//        if startOffSet_X < scrollingOffSet_X {
+//            print("向左滑")
+//        }else{
+//            print("向右滑🌺")
+//        }
+        
+        
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        endOffSet_X = scrollView.contentOffset.x
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
